@@ -63,6 +63,7 @@
     .guide-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+
     .span-2 {
         grid-column: span 2;
     }

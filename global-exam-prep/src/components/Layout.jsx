@@ -167,19 +167,19 @@ export default function Layout() {
                     gap: '0.75rem',
                 }}>
                     {/* Logo */}
-                    <Link to={showAdminNav ? '/dashboard' : '/'} className="pm-logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0 }}>
+                    <Link to={showAdminNav ? '/dashboard' : '/'} className="pm-logo" style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexShrink: 0, textDecoration: 'none' }}>
                         <div className="pm-logo__mark" style={{
-                            background: 'var(--accent-gradient)',
+                            background: '#D8CBB3',
                             padding: '0.45rem',
                             borderRadius: 'var(--radius-md)',
                             display: 'flex',
                             alignItems: 'center',
                             justifyContent: 'center'
                         }}>
-                            <BookOpen size={22} color="white" />
+                            <BookOpen size={22} color="#493326" />
                         </div>
-                        <span style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.02em' }}>
-                            Prep<span className="text-gradient">Master</span>
+                        <span style={{ fontSize: '1.2rem', fontWeight: 700, letterSpacing: '-0.02em', color: '#F5F2EB' }}>
+                            Prep<span style={{ color: '#D8CBB3' }}>Master</span>
                         </span>
                     </Link>
 
@@ -189,16 +189,14 @@ export default function Layout() {
                         onMouseLeave={() => setHoveredNav(null)}
                         style={{
                             display: 'flex',
-                            gap: '0.1rem',
+                            gap: '0.35rem',
                             alignItems: 'center',
                             flexShrink: 0,
-                            padding: '0.3rem',
-                            background: 'rgba(22, 24, 29, 0.65)',
-                            border: '1px solid rgba(255, 255, 255, 0.08)',
+                            padding: '0.35rem 0.55rem',
+                            background: '#242421',
+                            border: '1px solid #3A3A36',
                             borderRadius: 'var(--radius-full)',
-                            backdropFilter: 'blur(30px)',
-                            WebkitBackdropFilter: 'blur(30px)',
-                            boxShadow: 'inset 0 1px 1px rgba(255, 255, 255, 0.05), 0 10px 25px rgba(0, 0, 0, 0.4)'
+                            boxShadow: '0 4px 16px rgba(0, 0, 0, 0.25)',
                         }}
                     >
                         {navItems.map(item => {
@@ -224,7 +222,7 @@ export default function Layout() {
                                                     padding: '0 1.25rem',
                                                     lineHeight: '1',
                                                     fontFamily: 'inherit',
-                                                    color: showPill ? 'white' : 'var(--text-secondary)',
+                                                    color: showPill ? '#F5F0E7' : '#D8CBB3',
                                                     fontWeight: isCurrent ? 700 : 500,
                                                     fontSize: '0.92rem',
                                                     cursor: 'pointer',
@@ -243,7 +241,7 @@ export default function Layout() {
                                                     padding: '0 1.25rem',
                                                     lineHeight: '1',
                                                     fontFamily: 'inherit',
-                                                    color: showPill ? 'white' : 'var(--text-secondary)',
+                                                    color: showPill ? '#F5F0E7' : '#D8CBB3',
                                                     fontWeight: isCurrent ? 700 : 500,
                                                     fontSize: '0.92rem',
                                                     textDecoration: 'none',
@@ -264,6 +262,7 @@ export default function Layout() {
                         {/* Search */}
                         <div ref={searchRef} style={{ position: 'relative' }}>
                             <form
+                                className="pm-nav-search-form"
                                 onSubmit={(e) => {
                                     e.preventDefault();
                                     if (searchQuery.trim()) {
@@ -271,33 +270,14 @@ export default function Layout() {
                                         setShowSuggestions(false);
                                     }
                                 }}
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.5rem',
-                                    padding: '0.5rem 1rem',
-                                    borderRadius: 'var(--radius-full)',
-                                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                                    background: 'rgba(0, 0, 0, 0.2)',
-                                    position: 'relative',
-                                    zIndex: 101,
-                                    transition: 'border-color 0.2s',
-                                }}
                             >
                                 <button
                                     type="submit"
-                                    style={{
-                                        background: 'transparent',
-                                        border: 'none',
-                                        padding: 0,
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        cursor: 'pointer'
-                                    }}
+                                    className="pm-nav-search-btn"
                                     title="Search"
                                     aria-label="Submit Search"
                                 >
-                                    <Search size={16} color="var(--text-secondary)" style={{ minWidth: '16px' }} />
+                                    <Search size={16} color="#493326" style={{ minWidth: '16px' }} />
                                 </button>
                                 <input
                                     name="search"
@@ -306,20 +286,12 @@ export default function Layout() {
                                     onChange={(e) => { setSearchQuery(e.target.value); setShowSuggestions(true); }}
                                     onFocus={() => setShowSuggestions(true)}
                                     placeholder="Search courses or subjects..."
-                                    style={{
-                                        background: 'transparent',
-                                        border: 'none',
-                                        outline: 'none',
-                                        color: 'var(--text-primary)',
-                                        fontSize: '0.875rem',
-                                        fontFamily: 'inherit',
-                                        width: 'clamp(120px, 15vw, 200px)',
-                                    }}
+                                    className="pm-nav-search-input"
                                 />
                             </form>
 
                             {showSuggestions && searchQuery.trim() !== '' && (
-                                <div style={{
+                                <div className="pm-nav-suggestions" style={{
                                     position: 'absolute',
                                     top: '100%',
                                     right: 0,
@@ -327,9 +299,9 @@ export default function Layout() {
                                     padding: '0.5rem',
                                     borderRadius: 'var(--radius-lg)',
                                     width: 'clamp(300px, 400px, 90vw)',
-                                    background: 'var(--bg-secondary)',
-                                    border: '1px solid var(--glass-border)',
-                                    boxShadow: 'var(--shadow-lg)',
+                                    background: '#FFFFFF',
+                                    border: '1px solid #DDD5C7',
+                                    boxShadow: '0 12px 32px rgba(30, 30, 28, 0.12)',
                                     maxHeight: '400px',
                                     overflowY: 'auto',
                                     zIndex: 100
@@ -340,30 +312,30 @@ export default function Layout() {
                                                 <Link
                                                     key={item.id + item.type}
                                                     to={item.path}
+                                                    className="pm-nav-suggestion-item"
                                                     style={{
                                                         padding: '0.75rem',
                                                         borderRadius: 'var(--radius-md)',
                                                         display: 'flex',
                                                         alignItems: 'center',
                                                         justifyContent: 'space-between',
+                                                        textDecoration: 'none',
                                                         transition: 'background var(--transition-fast)'
                                                     }}
-                                                    onMouseOver={e => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
-                                                    onMouseOut={e => e.currentTarget.style.background = 'transparent'}
                                                     onClick={() => { setShowSuggestions(false); setSearchQuery(''); }}
                                                 >
                                                     <div style={{ display: 'flex', flexDirection: 'column', gap: '0.2rem' }}>
-                                                        <span style={{ fontWeight: 500, color: 'var(--text-primary)', fontSize: '0.9rem' }}>{item.title}</span>
-                                                        <span style={{ fontSize: '0.72rem', color: 'var(--text-tertiary)', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
+                                                        <span style={{ fontWeight: 600, color: '#1E1E1C', fontSize: '0.9rem' }}>{item.title}</span>
+                                                        <span style={{ fontSize: '0.72rem', color: '#806B57', textTransform: 'uppercase', letterSpacing: '0.05em' }}>
                                                             {item.type}{item.courseTitle ? ` • ${item.courseTitle}` : item.domainTitle ? ` • ${item.domainTitle}` : ''}
                                                         </span>
                                                     </div>
-                                                    <ChevronRight size={14} color="var(--text-secondary)" />
+                                                    <ChevronRight size={14} color="#806B57" />
                                                 </Link>
                                             ))}
                                         </div>
                                     ) : (
-                                        <div style={{ padding: '1rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.875rem' }}>
+                                        <div style={{ padding: '1rem', textAlign: 'center', color: '#806B57', fontSize: '0.875rem' }}>
                                             No results found for "{searchQuery}"
                                         </div>
                                     )}
@@ -375,8 +347,8 @@ export default function Layout() {
                         {currentUser ? (
                             <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
                                 <Link to="/dashboard" style={{
-                                    background: 'var(--bg-tertiary)',
-                                    border: '1px solid var(--glass-border)',
+                                    background: '#242421',
+                                    border: '1px solid #493326',
                                     padding: '0.45rem',
                                     borderRadius: '50%',
                                     display: 'flex',
@@ -384,11 +356,11 @@ export default function Layout() {
                                     justifyContent: 'center',
                                     transition: 'all var(--transition-normal)'
                                 }} title="Dashboard" aria-label="Go to Dashboard">
-                                    <User size={18} color="var(--accent-primary)" />
+                                    <User size={18} color="#D8CBB3" />
                                 </Link>
                                 <button onClick={handleLogout} style={{
                                     background: 'transparent',
-                                    border: '1px solid var(--glass-border)',
+                                    border: '1px solid #493326',
                                     padding: '0.45rem',
                                     borderRadius: '50%',
                                     display: 'flex',
@@ -397,31 +369,15 @@ export default function Layout() {
                                     transition: 'all var(--transition-normal)',
                                     cursor: 'pointer'
                                 }} title="Log Out" aria-label="Log Out of Account">
-                                    <LogOut size={18} color="var(--danger)" />
+                                    <LogOut size={18} color="#9B2C2C" />
                                 </button>
                             </div>
                         ) : (
-                            <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
-                                <Link to="/signup?mode=login" style={{
-                                    color: 'var(--text-primary)',
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.4rem',
-                                    fontWeight: 500,
-                                    fontSize: '0.9rem'
-                                }}>
-                                    <LogIn size={16} /> Log In
+                            <div style={{ display: 'flex', gap: '0.65rem', alignItems: 'center' }}>
+                                <Link to="/signup?mode=login" className="pm-btn-login">
+                                    <LogIn size={15} color="#F5F0E7" /> Log In
                                 </Link>
-                                <Link to="/signup?mode=signup" style={{
-                                    background: 'var(--accent-gradient)',
-                                    color: 'white',
-                                    padding: '0.45rem 1.1rem',
-                                    borderRadius: 'var(--radius-full)',
-                                    fontWeight: 600,
-                                    fontSize: '0.875rem',
-                                    boxShadow: 'var(--shadow-md)',
-                                    whiteSpace: 'nowrap',
-                                }}>
+                                <Link to="/signup?mode=signup" className="pm-btn-signup">
                                     Sign Up
                                 </Link>
                             </div>
@@ -432,18 +388,7 @@ export default function Layout() {
                     <button
                         className="nav-mobile-toggle"
                         onClick={() => setMobileMenuOpen(prev => !prev)}
-                        style={{
-                            background: 'transparent',
-                            border: '1px solid var(--glass-border)',
-                            borderRadius: 'var(--radius-md)',
-                            padding: '0.45rem',
-                            cursor: 'pointer',
-                            display: 'none',
-                            alignItems: 'center',
-                            justifyContent: 'center',
-                            color: 'var(--text-primary)',
-                        }}
-                        aria-label="Toggle menu"
+                        aria-label={mobileMenuOpen ? 'Close menu' : 'Open menu'}
                     >
                         {mobileMenuOpen ? <X size={22} /> : <Menu size={22} />}
                     </button>
@@ -451,17 +396,11 @@ export default function Layout() {
 
                 {/* Mobile Dropdown Menu */}
                 {mobileMenuOpen && (
-                    <div style={{
-                        background: 'rgba(15, 17, 21, 0.98)',
-                        borderTop: '1px solid var(--glass-border)',
-                        padding: '1rem 1.5rem 1.5rem',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        gap: '1rem',
-                    }}>
+                    <div className="pm-mobile-drawer">
                         {/* Mobile Search */}
                         <div ref={searchRef} style={{ position: 'relative' }}>
                             <form
+                                className="pm-mobile-search-form"
                                 onSubmit={(e) => {
                                     e.preventDefault();
                                     if (searchQuery.trim()) {
@@ -469,16 +408,6 @@ export default function Layout() {
                                         setShowSuggestions(false);
                                         setMobileMenuOpen(false);
                                     }
-                                }}
-                                style={{
-                                    display: 'flex',
-                                    alignItems: 'center',
-                                    gap: '0.5rem',
-                                    padding: '0.65rem 1rem',
-                                    borderRadius: 'var(--radius-md)',
-                                    border: '1px solid rgba(255, 255, 255, 0.1)',
-                                    background: 'rgba(0, 0, 0, 0.3)',
-                                    width: '100%',
                                 }}
                             >
                                 <button
@@ -493,7 +422,7 @@ export default function Layout() {
                                     }}
                                     title="Search"
                                 >
-                                    <Search size={16} color="var(--text-secondary)" />
+                                    <Search size={16} color="#493326" />
                                 </button>
                                 <input
                                     type="text"
@@ -501,15 +430,6 @@ export default function Layout() {
                                     onChange={(e) => { setSearchQuery(e.target.value); setShowSuggestions(true); }}
                                     onFocus={() => setShowSuggestions(true)}
                                     placeholder="Search courses or subjects..."
-                                    style={{
-                                        background: 'transparent',
-                                        border: 'none',
-                                        outline: 'none',
-                                        color: 'var(--text-primary)',
-                                        fontSize: '0.9rem',
-                                        fontFamily: 'inherit',
-                                        flex: 1,
-                                    }}
                                 />
                             </form>
                             {showSuggestions && searchQuery.trim() !== '' && (
@@ -520,9 +440,10 @@ export default function Layout() {
                                     right: 0,
                                     marginTop: '0.5rem',
                                     padding: '0.5rem',
-                                    borderRadius: 'var(--radius-md)',
-                                    background: 'var(--bg-secondary)',
-                                    border: '1px solid var(--glass-border)',
+                                    borderRadius: '10px',
+                                    background: '#FFFFFF',
+                                    border: '1px solid #D8CBB3',
+                                    boxShadow: '0 8px 24px rgba(73, 51, 38, 0.1)',
                                     maxHeight: '250px',
                                     overflowY: 'auto',
                                     zIndex: 100,
@@ -531,19 +452,26 @@ export default function Layout() {
                                         <Link
                                             key={item.id + item.type}
                                             to={item.path}
-                                            style={{ padding: '0.65rem', borderRadius: 'var(--radius-sm)', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}
-                                            onMouseOver={e => e.currentTarget.style.background = 'rgba(255,255,255,0.05)'}
+                                            style={{
+                                                padding: '0.65rem',
+                                                borderRadius: '6px',
+                                                display: 'flex',
+                                                justifyContent: 'space-between',
+                                                alignItems: 'center',
+                                                textDecoration: 'none'
+                                            }}
+                                            onMouseOver={e => e.currentTarget.style.background = '#F5F0E7'}
                                             onMouseOut={e => e.currentTarget.style.background = 'transparent'}
                                             onClick={() => { setShowSuggestions(false); setSearchQuery(''); setMobileMenuOpen(false); }}
                                         >
                                             <div>
-                                                <div style={{ fontWeight: 500, fontSize: '0.875rem', color: 'var(--text-primary)' }}>{item.title}</div>
-                                                <div style={{ fontSize: '0.7rem', color: 'var(--text-tertiary)', textTransform: 'uppercase' }}>{item.type}</div>
+                                                <div style={{ fontWeight: 600, fontSize: '0.875rem', color: '#1E1E1C' }}>{item.title}</div>
+                                                <div style={{ fontSize: '0.7rem', color: '#806B57', textTransform: 'uppercase' }}>{item.type}</div>
                                             </div>
-                                            <ChevronRight size={13} color="var(--text-tertiary)" />
+                                            <ChevronRight size={13} color="#806B57" />
                                         </Link>
                                     )) : (
-                                        <div style={{ padding: '0.75rem', textAlign: 'center', color: 'var(--text-secondary)', fontSize: '0.85rem' }}>No results found</div>
+                                        <div style={{ padding: '0.75rem', textAlign: 'center', color: '#806B57', fontSize: '0.85rem' }}>No results found</div>
                                     )}
                                 </div>
                             )}
@@ -551,49 +479,46 @@ export default function Layout() {
 
                         {navItems.map((item) => {
                             const Icon = navIcon[item.id] || Home;
+                            const isActive = activeNavId === item.id;
                             return (
                                 <Link
                                     key={item.id}
                                     to={item.path}
-                                    style={{
-                                        display: 'flex', alignItems: 'center', gap: '0.5rem',
-                                        color: 'var(--text-primary)', fontSize: '0.95rem', fontWeight: 500,
-                                        padding: '0.75rem 1rem',
-                                        borderRadius: 'var(--radius-md)',
-                                        border: '1px solid var(--glass-border)',
-                                        background: 'rgba(255,255,255,0.03)',
-                                    }}
+                                    className={`pm-mobile-nav-item ${isActive ? 'is-active' : ''}`}
+                                    onClick={() => setMobileMenuOpen(false)}
                                 >
-                                    <Icon size={18} color={navIconColor[item.id] || 'var(--accent-primary)'} /> {item.label}
+                                    <Icon size={18} color={isActive ? '#F5F0E7' : '#493326'} />
+                                    <span>{item.label}</span>
                                 </Link>
                             );
                         })}
-                        <div style={{ display: 'flex', gap: '0.75rem', borderTop: '1px solid var(--glass-border)', paddingTop: '1rem' }}>
+                        <div className="pm-mobile-auth">
                             {currentUser ? (
                                 <>
                                     {isAdmin && (
                                         <Link to="/admin/syllabus" style={{
                                             width: '100%', textAlign: 'center', padding: '0.75rem',
-                                            background: 'rgba(234,179,8,0.1)', borderRadius: 'var(--radius-md)',
-                                            border: '1px solid rgba(234,179,8,0.3)', color: '#eab308',
+                                            background: '#EAE1D3', borderRadius: '10px',
+                                            border: '1px solid #D8CBB3', color: '#493326',
                                             fontWeight: 600, fontSize: '0.9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
-                                            marginBottom: '0.5rem',
+                                            marginBottom: '0.5rem', textDecoration: 'none'
                                         }}>
                                             <Shield size={16} /> Syllabus Admin
                                         </Link>
                                     )}
                                     <Link to="/dashboard" style={{
                                         flex: 1, textAlign: 'center', padding: '0.75rem',
-                                        background: 'var(--bg-tertiary)', borderRadius: 'var(--radius-md)',
-                                        border: '1px solid var(--glass-border)', color: 'var(--accent-primary)',
-                                        fontWeight: 600, fontSize: '0.9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'
+                                        background: '#493326', borderRadius: '10px',
+                                        border: '1px solid #493326', color: '#F5F0E7',
+                                        fontWeight: 600, fontSize: '0.9rem', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem',
+                                        textDecoration: 'none'
                                     }}>
                                         <User size={16} /> Dashboard
                                     </Link>
                                     <button onClick={handleLogout} style={{
                                         flex: 1, padding: '0.75rem',
-                                        background: 'rgba(239,68,68,0.1)', borderRadius: 'var(--radius-md)',
-                                        border: '1px solid rgba(239,68,68,0.3)', color: 'var(--danger)',
+                                        background: '#EAE1D3', borderRadius: '10px',
+                                        border: '1px solid #D8CBB3', color: '#9B2C2C',
                                         fontWeight: 600, fontSize: '0.9rem', cursor: 'pointer',
                                         display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '0.5rem'
                                     }}>
@@ -602,19 +527,10 @@ export default function Layout() {
                                 </>
                             ) : (
                                 <>
-                                    <Link to="/signup?mode=login" style={{
-                                        flex: 1, textAlign: 'center', padding: '0.75rem',
-                                        background: 'var(--bg-tertiary)', borderRadius: 'var(--radius-md)',
-                                        border: '1px solid var(--glass-border)', color: 'var(--text-primary)',
-                                        fontWeight: 600, fontSize: '0.9rem'
-                                    }}>
-                                        Log In
+                                    <Link to="/signup?mode=login" className="pm-mobile-btn-login" onClick={() => setMobileMenuOpen(false)}>
+                                        <LogIn size={15} /> Log In
                                     </Link>
-                                    <Link to="/signup?mode=signup" style={{
-                                        flex: 1, textAlign: 'center', padding: '0.75rem',
-                                        background: 'var(--accent-gradient)', borderRadius: 'var(--radius-md)',
-                                        color: 'white', fontWeight: 600, fontSize: '0.9rem'
-                                    }}>
+                                    <Link to="/signup?mode=signup" className="pm-mobile-btn-signup" onClick={() => setMobileMenuOpen(false)}>
                                         Sign Up
                                     </Link>
                                 </>

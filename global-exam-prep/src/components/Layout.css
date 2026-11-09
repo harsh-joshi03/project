@@ -18,7 +18,7 @@
     position: relative;
     isolation: isolate;
     display: flex;
-    height: 36px;
+    height: 38px;
 }
 
 .nav-desktop-item .nav-active-pill {
@@ -27,7 +27,7 @@
     z-index: 0;
     pointer-events: none;
     border-radius: var(--radius-full);
-    background: #2D2D2A;
+    background: #493326;
     border: 1px solid #D8CBB3;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
@@ -49,12 +49,294 @@
 }
 
 .pm-logo__mark svg {
-    color: #1E1E1C !important;
+    color: #493326 !important;
 }
 
 .pm-logo:hover .pm-logo__mark {
     transform: rotate(-6deg) scale(1.05);
     box-shadow: 0 4px 14px rgba(216, 203, 179, 0.45);
+}
+
+/* ----------------------------------------------------
+   TASK 2 & 4: SEARCH BAR STYLES
+   ---------------------------------------------------- */
+.pm-nav-search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.55rem;
+    padding: 0 0.95rem;
+    height: 40px;
+    border-radius: var(--radius-full);
+    border: 1px solid #D8CBB3 !important;
+    background: #FFFFFF !important;
+    position: relative;
+    z-index: 101;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+    box-shadow: 0 1px 4px rgba(30, 30, 28, 0.05);
+}
+
+.pm-nav-search-form:hover {
+    border-color: #493326 !important;
+    box-shadow: 0 2px 8px rgba(73, 51, 38, 0.1);
+}
+
+.pm-nav-search-form:focus-within {
+    border-color: #493326 !important;
+    box-shadow: 0 0 0 3px rgba(216, 203, 179, 0.45);
+}
+
+.pm-nav-search-btn {
+    background: transparent;
+    border: none;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    color: #493326;
+}
+
+.pm-nav-search-btn svg,
+.pm-nav-search-form svg {
+    color: #493326 !important;
+    stroke: #493326 !important;
+}
+
+.pm-nav-search-input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #1E1E1C !important;
+    font-size: 0.88rem;
+    font-family: inherit;
+    width: clamp(140px, 16vw, 220px);
+}
+
+.pm-nav-search-input::placeholder {
+    color: #806B57 !important;
+    opacity: 1;
+    font-size: 0.86rem;
+}
+
+/* ----------------------------------------------------
+   TASK 3 & 4: AUTH BUTTONS
+   ---------------------------------------------------- */
+.pm-btn-login {
+    background: #493326 !important;
+    color: #F5F0E7 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    font-weight: 600;
+    font-size: 0.875rem;
+    padding: 0 1.2rem;
+    height: 40px;
+    border-radius: var(--radius-full);
+    border: 1px solid #493326 !important;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(73, 51, 38, 0.2);
+}
+
+.pm-btn-login:hover {
+    background: #5C4030 !important;
+    border-color: #5C4030 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(73, 51, 38, 0.28);
+}
+
+.pm-btn-login svg {
+    color: #F5F0E7 !important;
+    stroke: #F5F0E7 !important;
+}
+
+.pm-btn-signup {
+    background: #D8CBB3 !important;
+    color: #493326 !important;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 1.25rem;
+    height: 40px;
+    border-radius: var(--radius-full);
+    border: 1px solid #D8CBB3 !important;
+    font-weight: 600;
+    font-size: 0.875rem;
+    text-decoration: none;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    white-space: nowrap;
+    box-shadow: 0 2px 6px rgba(216, 203, 179, 0.35);
+}
+
+.pm-btn-signup:hover {
+    background: #EAE1D3 !important;
+    border-color: #B9AA91 !important;
+    color: #35241A !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(216, 203, 179, 0.5);
+}
+
+/* ----------------------------------------------------
+   TASK 1: MOBILE NAVIGATION DRAWER
+   ---------------------------------------------------- */
+.pm-mobile-drawer {
+    background: #F5F0E7 !important;
+    border-top: 1px solid #D8CBB3 !important;
+    padding: 1.25rem 1.25rem 1.75rem !important;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    box-shadow: 0 12px 30px rgba(73, 51, 38, 0.12);
+}
+
+.pm-mobile-search-form {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0 1rem;
+    height: 44px;
+    border-radius: 10px;
+    border: 1px solid #D8CBB3 !important;
+    background: #FFFFFF !important;
+    width: 100%;
+    transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.pm-mobile-search-form:hover {
+    border-color: #493326 !important;
+}
+
+.pm-mobile-search-form:focus-within {
+    border-color: #493326 !important;
+    box-shadow: 0 0 0 3px rgba(216, 203, 179, 0.45);
+}
+
+.pm-mobile-search-form input {
+    background: transparent;
+    border: none;
+    outline: none;
+    color: #1E1E1C !important;
+    font-size: 0.92rem;
+    font-family: inherit;
+    flex: 1;
+}
+
+.pm-mobile-search-form input::placeholder {
+    color: #806B57 !important;
+    opacity: 1;
+}
+
+.pm-mobile-search-form svg {
+    color: #493326 !important;
+    stroke: #493326 !important;
+}
+
+.pm-mobile-nav-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.75rem !important;
+    color: #493326 !important;
+    font-size: 0.95rem;
+    font-weight: 600;
+    padding: 0.85rem 1.1rem !important;
+    border-radius: 10px !important;
+    border: 1px solid #D8CBB3 !important;
+    background: #EAE1D3 !important;
+    text-decoration: none !important;
+    transition: background 0.18s ease, color 0.18s ease, transform 0.18s ease !important;
+}
+
+.pm-mobile-nav-item svg {
+    color: #493326 !important;
+    stroke: #493326 !important;
+    transition: color 0.18s ease, stroke 0.18s ease;
+}
+
+.pm-mobile-nav-item:hover:not(.is-active) {
+    background: #DDD5C7 !important;
+    color: #35241A !important;
+    transform: translateX(3px);
+}
+
+.pm-mobile-nav-item.is-active {
+    background: #493326 !important;
+    color: #F5F0E7 !important;
+    border-color: #493326 !important;
+    font-weight: 700;
+}
+
+.pm-mobile-nav-item.is-active svg {
+    color: #F5F0E7 !important;
+    stroke: #F5F0E7 !important;
+}
+
+.pm-mobile-auth {
+    display: flex;
+    gap: 0.75rem;
+    border-top: 1px solid #D8CBB3;
+    padding-top: 1rem;
+    margin-top: 0.25rem;
+}
+
+.pm-mobile-auth .pm-mobile-btn-login {
+    flex: 1;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    background: #493326 !important;
+    color: #F5F0E7 !important;
+    border: 1px solid #493326 !important;
+    border-radius: 10px !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.45rem;
+    transition: background 0.18s ease;
+}
+
+.pm-mobile-auth .pm-mobile-btn-login:hover {
+    background: #5C4030 !important;
+}
+
+.pm-mobile-auth .pm-mobile-btn-signup {
+    flex: 1;
+    text-align: center;
+    padding: 0.8rem 1rem;
+    background: #D8CBB3 !important;
+    color: #493326 !important;
+    border: 1px solid #D8CBB3 !important;
+    border-radius: 10px !important;
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.18s ease;
+}
+
+.pm-mobile-auth .pm-mobile-btn-signup:hover {
+    background: #EAE1D3 !important;
+    border-color: #B9AA91 !important;
+}
+
+.nav-mobile-toggle {
+    background: #242421 !important;
+    border: 1px solid #493326 !important;
+    border-radius: 8px !important;
+    padding: 0.45rem !important;
+    cursor: pointer;
+    color: #D8CBB3 !important;
+    transition: background 0.18s ease, color 0.18s ease;
+}
+
+.nav-mobile-toggle:hover {
+    background: #493326 !important;
+    color: #F5F0E7 !important;
 }
 
 .pm-main {

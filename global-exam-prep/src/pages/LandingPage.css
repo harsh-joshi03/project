@@ -133,14 +133,14 @@
 }
 
 .pm-home-secondary {
-    color: #1E1E1C !important;
-    border: 1px solid #DDD5C7 !important;
-    background: #EDE7DC !important;
+    color: #493326 !important;
+    border: 1px solid #D8CBB3 !important;
+    background: #EAE1D3 !important;
     box-shadow: 0 2px 6px rgba(30, 30, 28, 0.04) !important;
 }
 
 .pm-home-secondary:hover {
-    color: #1E1E1C !important;
+    color: #35241A !important;
     background: #D8CBB3 !important;
     border-color: #B9AA91 !important;
     transform: translateY(-2px) !important;

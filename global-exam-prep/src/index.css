@@ -10,12 +10,17 @@
   --pm-charcoal-soft: #2B2B28;
   --pm-charcoal-subtle: #3A3A36;
 
+  /* Refined Chocolate & Cream Academic Palette */
+  --pm-chocolate: #493326;
+  --pm-cream: #F5F0E7;
+  --pm-muted-brown: #806B57;
+
   --pm-beige: #D8CBB3;
   --pm-beige-soft: rgba(216, 203, 179, 0.28);
   --pm-beige-tint: rgba(216, 203, 179, 0.14);
   --pm-beige-border: rgba(216, 203, 179, 0.55);
   --pm-muted-beige: #B9AA91;
-  --pm-light-beige: #EDE7DC;
+  --pm-light-beige: #EAE1D3;
   --pm-off-white: #F5F2EB;
   --pm-soft-grey: #85837D;
   --pm-border: #DDD5C7;
