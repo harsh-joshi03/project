@@ -277,7 +277,7 @@ export default function Layout() {
                                     title="Search"
                                     aria-label="Submit Search"
                                 >
-                                    <Search size={16} color="#493326" style={{ minWidth: '16px' }} />
+                                    <Search size={16} color="#D8CBB3" style={{ minWidth: '16px' }} />
                                 </button>
                                 <input
                                     name="search"
@@ -412,17 +412,10 @@ export default function Layout() {
                             >
                                 <button
                                     type="submit"
-                                    style={{
-                                        background: 'transparent',
-                                        border: 'none',
-                                        padding: 0,
-                                        display: 'flex',
-                                        alignItems: 'center',
-                                        cursor: 'pointer'
-                                    }}
                                     title="Search"
+                                    aria-label="Submit Search"
                                 >
-                                    <Search size={16} color="#493326" />
+                                    <Search size={16} color="#D8CBB3" />
                                 </button>
                                 <input
                                     type="text"

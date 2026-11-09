@@ -218,36 +218,36 @@ body {
 
 /* Hero CTA Buttons */
 .pm-home-primary {
-    color: #F5F2EB !important;
-    background: #1E1E1C !important;
-    border: 1px solid #1E1E1C !important;
-    box-shadow: 0 4px 14px rgba(30, 30, 28, 0.18) !important;
+    color: #F5F0E7 !important;
+    background: #493326 !important;
+    border: 1px solid #493326 !important;
+    box-shadow: 0 4px 14px rgba(73, 51, 38, 0.22) !important;
     font-weight: 600 !important;
     letter-spacing: 0.01em !important;
 }
 
 .pm-home-primary:hover {
     color: #FFFFFF !important;
-    background: #333330 !important;
-    border-color: #333330 !important;
+    background: #634735 !important;
+    border-color: #634735 !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 8px 22px rgba(30, 30, 28, 0.24) !important;
+    box-shadow: 0 8px 22px rgba(73, 51, 38, 0.3) !important;
 }
 
 .pm-home-secondary {
-    color: #1E1E1C !important;
-    background: #EDE7DC !important;
-    border: 1px solid #DDD5C7 !important;
-    box-shadow: 0 2px 8px rgba(30, 30, 28, 0.06) !important;
+    color: #493326 !important;
+    background: #D8CBB3 !important;
+    border: 1px solid #C8B99F !important;
+    box-shadow: 0 2px 8px rgba(73, 51, 38, 0.08) !important;
     font-weight: 600 !important;
 }
 
 .pm-home-secondary:hover {
-    color: #1E1E1C !important;
-    background: #D8CBB3 !important;
+    color: #35241A !important;
+    background: #CBB99B !important;
     border-color: #B9AA91 !important;
     transform: translateY(-2px) !important;
-    box-shadow: 0 6px 16px rgba(30, 30, 28, 0.1) !important;
+    box-shadow: 0 6px 16px rgba(73, 51, 38, 0.12) !important;
 }
 
 .pm-home-proof {
@@ -637,11 +637,11 @@ body {
 .pm-exam-start-action,
 .pm-exam-generate-action,
 .pm-exam-room-action {
-    background: #1E1E1C !important;
-    color: #F5F2EB !important;
-    border: 1px solid #1E1E1C !important;
+    background: #493326 !important;
+    color: #F5F0E7 !important;
+    border: 1px solid #493326 !important;
     border-radius: var(--radius-full) !important;
-    box-shadow: 0 4px 14px rgba(30, 30, 28, 0.18) !important;
+    box-shadow: 0 4px 14px rgba(73, 51, 38, 0.22) !important;
     font-weight: 600 !important;
     font-size: 0.95rem !important;
     padding: 0.75rem 1.8rem !important;
@@ -651,7 +651,8 @@ body {
 .pm-exam-start-action:hover:not(:disabled),
 .pm-exam-generate-action:hover:not(:disabled),
 .pm-exam-room-action:hover:not(:disabled) {
-    background: #333330 !important;
+    background: #634735 !important;
+    border-color: #634735 !important;
     color: #FFFFFF !important;
     transform: translateY(-1px) !important;
     box-shadow: 0 6px 20px rgba(30, 30, 28, 0.25) !important;
@@ -728,14 +729,15 @@ body {
 
 #root .pm-main .pm-exam-question-step--next,
 #root .pm-main .pm-room-question-step--next {
-    background: #1E1E1C !important;
-    color: #F5F2EB !important;
-    border: 1px solid #1E1E1C !important;
+    background: #493326 !important;
+    color: #F5F0E7 !important;
+    border: 1px solid #493326 !important;
 }
 
 #root .pm-main .pm-exam-question-step--next:hover,
 #root .pm-main .pm-room-question-step--next:hover {
-    background: #333330 !important;
+    background: #634735 !important;
+    border-color: #634735 !important;
 }
 
 #root .pm-main .pm-active-exam .pm-exam-submit,
@@ -982,15 +984,15 @@ body {
 }
 
 .ac-btn {
-    background: #1E1E1C !important;
-    color: #F5F2EB !important;
-    border: 1px solid #1E1E1C !important;
+    background: #493326 !important;
+    color: #F5F0E7 !important;
+    border: 1px solid #493326 !important;
     border-radius: var(--radius-full) !important;
 }
 
 .ac-btn:hover {
-    background: #333330 !important;
-    border-color: #333330 !important;
+    background: #634735 !important;
+    border-color: #634735 !important;
 }
 
 .ac-btn--secondary {
