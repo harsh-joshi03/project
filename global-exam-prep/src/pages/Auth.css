@@ -9,29 +9,29 @@
 @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
 
 :root {
-    --bg-void: #050506;
-    --card-bg: rgba(12, 13, 17, 0.66);
-    --card-bg-solid: #101116;
-    --border-subtle: rgba(255, 255, 255, 0.08);
-    --border-hover: rgba(255, 255, 255, 0.2);
-    --text-primary: #f3f2f0;
-    --text-muted: #8a8a92;
+    --bg-void: #F5F2EB;
+    --card-bg: #FFFFFF;
+    --card-bg-solid: #FFFFFF;
+    --border-subtle: #DDD5C7;
+    --border-hover: #B9AA91;
+    --text-primary: #1E1E1C;
+    --text-muted: #5C5B57;
 
-    /* Signature accent: highlighter amber — the "focus ring" color */
-    --accent: #ffb454;
-    --accent-soft: rgba(255, 180, 84, 0.14);
-    --accent-2: #8d7bff;
+    /* Signature accent: Charcoal primary with warm beige highlight */
+    --accent: #1E1E1C;
+    --accent-soft: rgba(216, 203, 179, 0.45);
+    --accent-2: #D8CBB3;
 
-    --error: #ff5d5d;
-    --error-soft: rgba(255, 93, 93, 0.12);
-    --success: #45d483;
-    --success-soft: rgba(69, 212, 131, 0.12);
+    --error: #9B2C2C;
+    --error-soft: rgba(155, 44, 44, 0.12);
+    --success: #2A6A4E;
+    --success-soft: rgba(42, 106, 78, 0.12);
 
-    --font-display: 'Space Grotesk', 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-    --font-body: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    --font-display: 'Playfair Display', 'DM Serif Display', Georgia, serif;
+    --font-body: 'Inter', 'Manrope', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
 
-    --ring-track: rgba(255, 255, 255, 0.08);
+    --ring-track: rgba(221, 213, 199, 0.6);
     --radius-card: 20px;
 }
 
@@ -70,67 +70,67 @@ input:focus-visible,
 .mesh-bg {
     position: fixed;
     inset: 0;
-    background-color: #08080a;
+    background-color: #F5F2EB;
     overflow: hidden;
     z-index: 0;
 }
 
-/* Faint graph-paper grid — a quiet nod to answer sheets, not literal */
+/* Faint graph-paper grid — a quiet nod to answer sheets */
 .mesh-bg::before {
     content: "";
     position: absolute;
     inset: -50px;
     background-image:
-        linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
-    background-size: 34px 34px;
+        linear-gradient(rgba(221, 213, 199, 0.45) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(221, 213, 199, 0.45) 1px, transparent 1px);
+    background-size: 32px 32px;
     animation: grid-drift 40s linear infinite;
-    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 75%);
+    mask-image: radial-gradient(ellipse 80% 60% at 50% 40%, black 20%, transparent 85%);
 }
 
 @keyframes grid-drift {
-    to { transform: translate(34px, 34px); }
+    to { transform: translate(32px, 32px); }
 }
 
-/* Film grain */
+/* Subtle texture */
 .mesh-bg::after {
     content: "";
     position: absolute;
     inset: 0;
     background: url('data:image/svg+xml;utf8,<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg"><filter id="noiseFilter"><feTurbulence type="fractalNoise" baseFrequency="0.8" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noiseFilter)"/></svg>');
-    opacity: 0.1;
+    opacity: 0.04;
     pointer-events: none;
-    mix-blend-mode: overlay;
+    mix-blend-mode: multiply;
 }
 
 .mesh-blob {
     position: absolute;
     border-radius: 50%;
-    filter: blur(90px);
-    opacity: 0.4;
+    filter: blur(100px);
+    opacity: 0.35;
     animation: blob-float 25s infinite alternate cubic-bezier(0.4, 0, 0.2, 1);
     will-change: transform;
 }
 
 .blob-1 {
     top: -10%; left: -10%;
-    width: 60vw; height: 60vw;
-    background: linear-gradient(to right, #4338ca, #312e81);
+    width: 50vw; height: 50vw;
+    background: radial-gradient(circle, rgba(216, 203, 179, 0.5), transparent 70%);
 }
 
 .blob-2 {
     bottom: -20%; right: -10%;
-    width: 70vw; height: 70vw;
-    background: linear-gradient(to top, #7e22ce, #4c1d95);
+    width: 60vw; height: 60vw;
+    background: radial-gradient(circle, rgba(237, 231, 220, 0.7), transparent 70%);
     animation-delay: -5s;
 }
 
-/* Amber third blob — warms the palette, echoes the focus-ring accent */
+/* Warm beige subtle third blob */
 .blob-3 {
     top: 40%; left: 50%;
     width: 38vw; height: 38vw;
-    background: radial-gradient(circle, rgba(255, 180, 84, 0.55), transparent 70%);
-    opacity: 0.25;
+    background: radial-gradient(circle, rgba(216, 203, 179, 0.4), transparent 70%);
+    opacity: 0.3;
     animation: blob-float 32s infinite alternate-reverse cubic-bezier(0.4, 0, 0.2, 1);
     animation-delay: -12s;
 }
@@ -156,36 +156,33 @@ input:focus-visible,
 
 .premium-auth-card {
     width: 100%;
-    max-width: 420px;
-    background: var(--card-bg);
-    border: 1px solid var(--border-subtle);
+    max-width: 440px;
+    background: #FFFFFF;
+    border: 1px solid #DDD5C7;
     border-radius: var(--radius-card);
     padding: 2.5rem;
     position: relative;
     isolation: isolate;
     overflow: hidden;
     box-shadow:
-        0 30px 60px -12px rgba(0, 0, 0, 0.8),
-        inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(40px);
-    -webkit-backdrop-filter: blur(40px);
+        0 8px 30px rgba(30, 30, 28, 0.08),
+        0 1px 3px rgba(30, 30, 28, 0.04);
     display: flex;
     flex-direction: column;
-    animation: card-breathe 6s ease-in-out infinite;
 }
 
 @keyframes card-breathe {
-    0%, 100% { box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.8), inset 0 1px 0 rgba(255, 255, 255, 0.05), 0 0 0 1px rgba(255, 180, 84, 0.06); }
-    50%      { box-shadow: 0 30px 70px -10px rgba(0, 0, 0, 0.85), inset 0 1px 0 rgba(255, 255, 255, 0.06), 0 0 42px 1px rgba(255, 180, 84, 0.16); }
+    0%, 100% { box-shadow: 0 8px 30px rgba(30, 30, 28, 0.08), 0 1px 3px rgba(30, 30, 28, 0.04); }
+    50%      { box-shadow: 0 12px 36px rgba(30, 30, 28, 0.12), 0 0 0 1px #D8CBB3; }
 }
 
-/* Cursor spotlight — driven by --spot-x/--spot-y set from JS */
+/* Cursor spotlight */
 .premium-auth-card::before {
     content: "";
     position: absolute;
     inset: 0;
     z-index: 0;
-    background: radial-gradient(500px circle at var(--spot-x, 50%) var(--spot-y, 0%), rgba(255, 180, 84, 0.1), transparent 45%);
+    background: radial-gradient(500px circle at var(--spot-x, 50%) var(--spot-y, 0%), rgba(216, 203, 179, 0.25), transparent 50%);
     opacity: 0;
     transition: opacity 0.4s ease;
     pointer-events: none;
@@ -282,20 +279,10 @@ input:focus-visible,
 }
 
 .gradient-word {
-    /* Brand palette: amber → warm cream → electric violet */
-    background: linear-gradient(135deg, var(--accent) 0%, #ffdca8 40%, var(--accent-2) 100%);
+    background: linear-gradient(135deg, #1E1E1C 0%, #85837D 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    /* Animate the gradient shift for a shimmer effect */
-    background-size: 200% auto;
-    animation: gradient-shimmer 4s linear infinite;
-}
-
-@keyframes gradient-shimmer {
-    0%   { background-position: 0% center; }
-    50%  { background-position: 100% center; }
-    100% { background-position: 0% center; }
 }
 
 .auth-subtitle {
@@ -307,7 +294,6 @@ input:focus-visible,
 
 .auth-content-area {
     position: relative;
-    /* FIX: allow animated children (email form expanding) to paint correctly */
     overflow: visible;
 }
 
@@ -316,13 +302,12 @@ input:focus-visible,
    ========================================================================== */
 .segmented-control {
     display: flex;
-    background: rgba(255, 255, 255, 0.03);
+    background: #EDE7DC;
     border: 1px solid var(--border-subtle);
     border-radius: 12px;
     padding: 4px;
     margin-bottom: 1.75rem;
     position: relative;
-    /* FIX: clip the framer-motion layout animation so it never bleeds outside */
     overflow: hidden;
 }
 
@@ -334,7 +319,7 @@ input:focus-visible,
     padding: 0.6rem 0;
     font-size: 0.9rem;
     font-weight: 600;
-    color: var(--text-muted);
+    color: #5C5B57;
     cursor: pointer;
     transition: color 0.3s ease;
     text-align: center;
@@ -342,12 +327,11 @@ input:focus-visible,
 }
 
 .segment-btn.active {
-    /* Deep dark text so it reads well on the amber pill */
-    color: #1a0e00;
+    color: #FFFFFF;
 }
 
 .segment-btn:not(.active):hover {
-    color: var(--accent);
+    color: #1E1E1C;
 }
 
 .segment-btn.active::before {
@@ -355,12 +339,9 @@ input:focus-visible,
     position: absolute;
     inset: 0;
     pointer-events: none;
-    /* The active tab owns this fill; it never travels between buttons. */
-    background: linear-gradient(135deg, var(--accent) 0%, #ffd08a 55%, #ffb454 100%);
+    background: #1E1E1C;
     border-radius: 8px;
-    box-shadow:
-        0 2px 14px rgba(255, 180, 84, 0.45),
-        0 0 0 1px rgba(255, 180, 84, 0.3) inset;
+    box-shadow: 0 2px 8px rgba(30, 30, 28, 0.2);
     z-index: 0;
 }
 
@@ -387,11 +368,11 @@ input:focus-visible,
 
 .input-group input {
     width: 100%;
-    background: rgba(255, 255, 255, 0.02);
+    background: #F5F2EB;
     border: 1px solid var(--border-subtle);
     border-radius: 10px;
     padding: 1.25rem 2.75rem 0.4rem 1rem;
-    color: white;
+    color: #1E1E1C;
     font-size: 0.95rem;
     transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
     box-sizing: border-box;
@@ -421,22 +402,22 @@ input:focus-visible,
 /* When focused or has value */
 .input-group input:focus,
 .input-group input:not(:placeholder-shown) {
-    border-color: var(--accent);
+    border-color: #1E1E1C;
     outline: none;
-    background: rgba(255, 180, 84, 0.04);
-    box-shadow: 0 0 0 3px var(--accent-soft);
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(216, 203, 179, 0.45);
 }
 
 .input-group input:focus + label,
 .input-group input:not(:placeholder-shown) + label {
     top: 0.8rem;
     font-size: 0.7rem;
-    font-weight: 500;
-    color: var(--accent);
+    font-weight: 600;
+    color: #1E1E1C;
 }
 
 .input-group:focus-within .input-icon {
-    color: var(--accent);
+    color: #1E1E1C;
 }
 
 .password-toggle {
@@ -457,11 +438,12 @@ input:focus-visible,
    5. Premium Buttons — brand-colored creative hover effects
    ========================================================================== */
 
-/* --- Log In / Submit button: amber liquid-fill sweep --- */
+/* --- Log In / Submit button: Primary Charcoal --- */
 .premium-btn {
     width: 100%;
-    background: linear-gradient(135deg, #ffffff, #f1f1f1);
-    color: #0d0b08;
+    background: #1E1E1C;
+    color: #F5F2EB;
+    border: 1px solid #1E1E1C;
     border-radius: 10px;
     padding: 0.85rem;
     font-size: 0.95rem;
@@ -472,48 +454,17 @@ input:focus-visible,
     gap: 8px;
     position: relative;
     overflow: hidden;
-    box-shadow: 0 4px 14px rgba(255, 255, 255, 0.12);
+    box-shadow: 0 4px 14px rgba(30, 30, 28, 0.16);
     margin-top: 0.25rem;
-    transition: color 0.35s ease, box-shadow 0.35s ease;
-    isolation: isolate;
-}
-
-/* Amber fill that rises from the bottom on hover */
-.premium-btn::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(135deg, var(--accent) 0%, #ffd08a 55%, var(--accent-2) 100%);
-    background-size: 200% auto;
-    transform: translateY(100%);
-    transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
-    z-index: -1;
-    border-radius: inherit;
-}
-
-/* Shimmer sweep on top of the fill */
-.premium-btn::after {
-    content: "";
-    position: absolute;
-    top: 0; left: -70%;
-    width: 45%; height: 100%;
-    background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.35), transparent);
-    transform: skewX(-20deg);
-    transition: left 0.55s ease;
-    z-index: 1;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    cursor: pointer;
 }
 
 .premium-btn:hover:not(:disabled) {
-    color: #0d0b08;
-    box-shadow: 0 6px 24px rgba(255, 180, 84, 0.45), 0 2px 8px rgba(141, 123, 255, 0.25);
-}
-
-.premium-btn:hover:not(:disabled)::before {
-    transform: translateY(0);
-}
-
-.premium-btn:hover:not(:disabled)::after {
-    left: 130%;
+    background: #333330;
+    color: #FFFFFF;
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(30, 30, 28, 0.22);
 }
 
 .premium-btn:disabled {
@@ -521,30 +472,29 @@ input:focus-visible,
     cursor: not-allowed;
 }
 
-/* --- Google button: subtle border-glow on hover --- */
+/* --- Google button: clean paper border --- */
 .premium-google-btn {
     width: 100%;
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.02) 100%);
+    background: #FFFFFF;
     border: 1px solid var(--border-subtle);
     border-radius: 10px;
     padding: 0.85rem;
-    color: white;
+    color: #1E1E1C;
     font-size: 0.95rem;
-    font-weight: 500;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 12px;
-    transition: border-color 0.25s ease, background 0.25s ease, box-shadow 0.25s ease;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.05);
-    position: relative;
-    overflow: hidden;
+    transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 1px 3px rgba(30, 30, 28, 0.04);
+    cursor: pointer;
 }
 
 .premium-google-btn:hover:not(:disabled) {
-    border-color: rgba(255, 255, 255, 0.28);
-    background: linear-gradient(180deg, rgba(255, 255, 255, 0.08) 0%, rgba(255, 255, 255, 0.04) 100%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.08), 0 4px 16px rgba(0, 0, 0, 0.3);
+    border-color: #B9AA91;
+    background: #F5F2EB;
+    box-shadow: 0 3px 10px rgba(30, 30, 28, 0.06);
 }
 
 /* --- Continue with Email: brand amber outline-fill effect --- */
@@ -700,27 +650,27 @@ input:focus-visible,
     width: 3.2rem;
     height: 3.8rem;
     border-radius: 12px;
-    background: rgba(255, 255, 255, 0.02);
+    background: #FFFFFF;
     border: 1px solid var(--border-subtle);
-    color: white;
+    color: #1E1E1C;
     font-family: var(--font-mono);
     font-size: 1.5rem;
-    font-weight: 500;
+    font-weight: 600;
     text-align: center;
     transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 1px 3px rgba(30, 30, 28, 0.04);
     caret-color: transparent;
 }
 
 .otp-digit:focus {
-    border-color: var(--accent);
-    background: rgba(255, 180, 84, 0.06);
-    box-shadow: 0 0 0 3px var(--accent-soft), inset 0 2px 4px rgba(0, 0, 0, 0.2);
+    border-color: #1E1E1C;
+    background: #FFFFFF;
+    box-shadow: 0 0 0 3px rgba(216, 203, 179, 0.45);
     transform: translateY(-2px);
 }
 
 .otp-digit.filled {
-    border-color: rgba(255, 180, 84, 0.5);
+    border-color: #1E1E1C;
     animation: digit-pop 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
 

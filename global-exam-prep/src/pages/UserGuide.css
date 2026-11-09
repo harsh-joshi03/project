@@ -1,33 +1,17 @@
+/* ==========================================================================
+   USER GUIDE — PREPMASTER EDITORIAL ACADEMIC SYSTEM
+   ========================================================================== */
+
 .guide-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: 2rem 1.5rem;
+    padding: 2.5rem 1.5rem 5rem;
     position: relative;
-    overflow: hidden;
+    color: #1E1E1C;
 }
 
 .bg-glow-sphere {
-    position: absolute;
-    border-radius: 50%;
-    filter: blur(100px);
-    z-index: -1;
-    opacity: 0.4;
-}
-
-.shape-1 {
-    top: -100px;
-    left: 10%;
-    width: 400px;
-    height: 400px;
-    background: radial-gradient(circle, rgba(59,130,246,0.15) 0%, rgba(0,0,0,0) 70%);
-}
-
-.shape-2 {
-    bottom: 20%;
-    right: -50px;
-    width: 350px;
-    height: 350px;
-    background: radial-gradient(circle, rgba(139,92,246,0.15) 0%, rgba(0,0,0,0) 70%);
+    display: none;
 }
 
 .guide-header {
@@ -39,35 +23,33 @@
 }
 
 .guide-icon-wrapper {
-    background: rgba(255, 255, 255, 0.05);
-    border: 1px solid var(--glass-border);
-    padding: 1rem;
-    border-radius: 1.5rem;
+    background: #EDE7DC;
+    border: 1px solid #DDD5C7;
+    padding: 1.1rem;
+    border-radius: 1.25rem;
     margin-bottom: 1.5rem;
     display: inline-flex;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 14px rgba(30, 30, 28, 0.05);
 }
 
 .guide-icon {
-    color: var(--accent-primary);
+    color: #1E1E1C;
 }
 
 .guide-title {
-    font-size: clamp(2.5rem, 5vw, 4rem);
-    font-weight: 800;
+    font-family: var(--font-serif);
+    font-size: clamp(2.5rem, 5vw, 3.8rem);
+    font-weight: 700;
     margin-bottom: 1rem;
-    background: linear-gradient(to right, #ffffff, #a5b4fc);
-    background-clip: text;
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    letter-spacing: -0.02em;
+    color: #1E1E1C;
+    letter-spacing: -0.03em;
 }
 
 .guide-subtitle {
-    color: var(--text-secondary);
-    font-size: clamp(1.1rem, 2vw, 1.25rem);
-    max-width: 600px;
-    line-height: 1.6;
+    color: #5C5B57;
+    font-size: clamp(1.05rem, 2vw, 1.2rem);
+    max-width: 620px;
+    line-height: 1.65;
 }
 
 .guide-grid {
@@ -87,18 +69,30 @@
 }
 
 .guide-card {
-    background: rgba(20, 22, 28, 0.6);
-    backdrop-filter: blur(12px);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-xl);
-    padding: 2rem;
-    transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+    background: #FFFFFF;
+    border: 1px solid #DDD5C7;
+    border-radius: 16px;
+    padding: 2.2rem;
+    box-shadow: 0 2px 8px rgba(30, 30, 28, 0.04);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.guide-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: #D8CBB3;
 }
 
 .guide-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    border-color: rgba(255, 255, 255, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 24px rgba(30, 30, 28, 0.08);
+    border-color: #B9AA91;
 }
 
 .card-header {
@@ -109,29 +103,36 @@
 }
 
 .card-icon {
-    padding: 0.75rem;
-    border-radius: var(--radius-lg);
+    padding: 0.8rem;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
+    background: #EDE7DC;
+    border: 1px solid #DDD5C7;
+    color: #1E1E1C;
 }
 
-.card-icon.blue { background: rgba(59, 130, 246, 0.15); color: #60a5fa; }
-.card-icon.purple { background: rgba(139, 92, 246, 0.15); color: #a78bfa; }
-.card-icon.orange { background: rgba(245, 158, 11, 0.15); color: #fbbf24; }
-.card-icon.green { background: rgba(16, 185, 129, 0.15); color: #34d399; }
+.card-icon.blue,
+.card-icon.purple,
+.card-icon.orange,
+.card-icon.green {
+    background: #EDE7DC;
+    color: #1E1E1C;
+}
 
 .card-header h2 {
-    font-size: 1.5rem;
+    font-family: var(--font-serif);
+    font-size: 1.45rem;
     font-weight: 700;
-    color: var(--text-primary);
+    color: #1E1E1C;
     margin: 0;
 }
 
 .card-content p {
-    color: var(--text-secondary);
+    color: #5C5B57;
     margin-bottom: 1.5rem;
-    line-height: 1.6;
+    line-height: 1.65;
 }
 
 .feature-list {
@@ -147,59 +148,59 @@
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    color: var(--text-secondary);
+    color: #5C5B57;
     line-height: 1.5;
 }
 
 .feature-list li svg {
-    color: var(--accent-primary);
+    color: #1E1E1C;
     flex-shrink: 0;
     margin-top: 0.2rem;
 }
 
 .feature-list li strong {
-    color: var(--text-primary);
+    color: #1E1E1C;
 }
 
 /* Mode Grid Styles */
 .mode-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 1.5rem;
 }
 
 .mode-box {
-    background: rgba(255, 255, 255, 0.03);
-    border: 1px solid var(--glass-border);
-    border-radius: var(--radius-lg);
-    padding: 1.5rem;
+    background: #F5F2EB;
+    border: 1px solid #DDD5C7;
+    border-radius: 14px;
+    padding: 1.6rem;
     text-align: center;
-    transition: background 0.2s;
+    transition: background 0.2s, border-color 0.2s;
 }
 
 .mode-box:hover {
-    background: rgba(255, 255, 255, 0.05);
+    background: #EDE7DC;
+    border-color: #B9AA91;
 }
 
 .mode-icon {
     margin-bottom: 1rem;
+    color: #1E1E1C;
 }
-.mode-icon.purple { color: #a78bfa; }
-.mode-icon.green { color: #34d399; }
-.mode-icon.blue { color: #60a5fa; }
 
 .mode-box h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
-    margin-bottom: 0.75rem;
-    color: var(--text-primary);
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin-bottom: 0.65rem;
+    color: #1E1E1C;
 }
 
 .mode-box p {
-    font-size: 0.9rem;
-    color: var(--text-tertiary);
+    font-size: 0.88rem;
+    color: #5C5B57;
     margin: 0;
-    line-height: 1.5;
+    line-height: 1.55;
 }
 
 .dashboard-cta {
@@ -209,29 +210,32 @@
 }
 
 .guide-container .btn-primary {
-    background: var(--accent-gradient);
-    color: white;
-    border: none;
-    padding: 0.85rem 2.5rem;
-    border-radius: var(--radius-full);
-    font-weight: 600;
-    font-size: 0.95rem;
-    cursor: pointer;
-    transition: background 0.15s ease, border-color 0.15s ease;
+    background: #1E1E1C !important;
+    color: #F5F2EB !important;
+    border: 1px solid #1E1E1C !important;
+    padding: 0.85rem 2.5rem !important;
+    border-radius: var(--radius-full) !important;
+    font-weight: 600 !important;
+    font-size: 0.95rem !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 14px rgba(30, 30, 28, 0.16) !important;
+    transition: all 0.2s ease !important;
     text-align: center;
+    text-decoration: none;
 }
 
 .guide-container .btn-primary:hover {
-    transform: none;
-    background: linear-gradient(135deg, #2563eb, #6d28d9);
-    box-shadow: none;
+    background: #333330 !important;
+    color: #FFFFFF !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 8px 22px rgba(30, 30, 28, 0.22) !important;
 }
 
 /* FAQ Styles */
 .faq-section {
     margin-top: 5rem;
     padding-top: 4rem;
-    border-top: 1px solid var(--glass-border);
+    border-top: 1px solid #DDD5C7;
 }
 
 .faq-header {
@@ -240,30 +244,41 @@
 }
 
 .faq-header h2 {
-    font-size: 2rem;
+    font-family: var(--font-serif);
+    font-size: 2.1rem;
     font-weight: 700;
+    color: #1E1E1C;
     margin-bottom: 0.5rem;
 }
 
 .faq-header p {
-    color: var(--text-secondary);
+    color: #5C5B57;
 }
 
 .faq-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.75rem;
+}
+
+.faq-item {
+    background: #FFFFFF;
+    border: 1px solid #DDD5C7;
+    border-radius: 14px;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(30, 30, 28, 0.03);
 }
 
 .faq-item h3 {
-    font-size: 1.1rem;
-    font-weight: 600;
+    font-family: var(--font-serif);
+    font-size: 1.15rem;
+    font-weight: 700;
     margin-bottom: 0.75rem;
-    color: var(--text-primary);
+    color: #1E1E1C;
 }
 
 .faq-item p {
-    color: var(--text-secondary);
+    color: #5C5B57;
     line-height: 1.6;
-    font-size: 0.95rem;
+    font-size: 0.92rem;
 }

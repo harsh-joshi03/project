@@ -1,15 +1,15 @@
 /* Exam-generation and Test Room interaction system.
-   Navbar-inspired dark Liquid Glass: dense visible charcoal, clean edges and blue selected motion. */
+   Academic Study Desk Aesthetic: Primary Charcoal (#1E1E1C) and Warm Beige (#D8CBB3). */
 .pm-exam-portal,
 .pm-active-exam,
 .pm-subject-page,
 .pm-test-room-page {
-    --pm-exam-blue: #3b82f6;
-    --pm-exam-blue-deep: #1d4ed8;
-    --pm-exam-glass: rgba(15, 23, 36, .93);
-    --pm-exam-glass-raised: rgba(27, 40, 60, .94);
-    --pm-exam-glass-border: rgba(220, 235, 255, .2);
-    color: #f6f9ff;
+    --pm-exam-blue: #1E1E1C;
+    --pm-exam-blue-deep: #2A2A28;
+    --pm-exam-glass: #FFFFFF;
+    --pm-exam-glass-raised: #FAF8F5;
+    --pm-exam-glass-border: #DDD5C7;
+    color: #1E1E1C;
 }
 .pm-exam-portal,
 .pm-test-room-page,
@@ -28,25 +28,21 @@
     left: 6%;
     width: min(760px, 88%);
     height: 360px;
-    background: radial-gradient(ellipse, rgba(37, 99, 235, .13), transparent 70%);
+    background: radial-gradient(ellipse, rgba(216, 203, 179, .22), transparent 70%);
 }
 
-/* Main glass shells remain dark and substantial so fine exam text stays legible. */
+/* Crisp academic paper shells with delicate warm borders and clear serif titles. */
 .pm-exam-portal .glass-panel,
 .pm-active-exam .glass-panel,
 .pm-subject-page .pm-exam-config-panel,
 .pm-test-room-page .glass-panel {
-    background: var(--pm-exam-glass) !important;
-    color: #f6f9ff;
+    background: #FFFFFF !important;
+    color: #1E1E1C;
     border: 1px solid var(--pm-exam-glass-border) !important;
-    border-radius: 22px;
-    backdrop-filter: blur(24px) saturate(155%) !important;
-    -webkit-backdrop-filter: blur(24px) saturate(155%) !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .2),
-        inset 0 -1px 0 rgba(96, 165, 250, .06),
-        0 20px 48px rgba(0, 0, 0, .36),
-        0 4px 12px rgba(0, 0, 0, .2);
+    border-radius: 20px;
+    box-shadow: 0 4px 24px rgba(30, 30, 28, 0.05), 0 1px 3px rgba(30, 30, 28, 0.02) !important;
+    backdrop-filter: blur(16px) !important;
+    -webkit-backdrop-filter: blur(16px) !important;
 }
 .pm-exam-portal h1,
 .pm-exam-portal h2,
@@ -57,29 +53,24 @@
 .pm-test-room-page h1,
 .pm-test-room-page h2,
 .pm-test-room-page h3 {
-    color: #f8fbff;
+    font-family: var(--font-serif);
+    color: #1E1E1C !important;
+    letter-spacing: -0.02em;
 }
 
-/* Exam configuration: white glass controls, with the auth screen's amber focus-fill.
-   Source of truth: Auth.css --accent (#ffb454), #ffd08a, and the white premium-btn surface. */
+/* Exam configuration: stationery paper controls with warm beige boundaries. */
 .pm-exam-config-panel {
     padding: clamp(1.15rem, 3vw, 1.7rem) !important;
-    border: 1px solid rgba(255, 180, 84, .42) !important;
-    border-top-color: rgba(255, 180, 84, .24) !important;
-    border-radius: 0 0 22px 22px !important;
-    background:
-        radial-gradient(115% 85% at 0% 0%, rgba(255, 180, 84, .13), transparent 54%),
-        rgba(15, 17, 21, .97) !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .17),
-        0 18px 38px rgba(0, 0, 0, .34),
-        0 0 24px rgba(255, 180, 84, .07) !important;
+    border: 1px solid #DDD5C7 !important;
+    border-radius: 20px !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 4px 20px rgba(30, 30, 28, 0.04) !important;
 }
 .pm-exam-step-label {
     margin: 0 0 .8rem;
-    color: #fffaf1;
+    color: #1E1E1C;
     font-size: .83rem;
-    font-weight: 750;
+    font-weight: 700;
     letter-spacing: .015em;
 }
 .pm-exam-choice,
@@ -88,16 +79,11 @@
     position: relative;
     isolation: isolate;
     overflow: hidden;
-    color: #211a11 !important;
-    border: 1px solid rgba(255, 180, 84, .35) !important;
-    background: linear-gradient(145deg, #ffffff 0%, #f1f1f1 100%) !important;
-    backdrop-filter: blur(22px) saturate(165%);
-    -webkit-backdrop-filter: blur(22px) saturate(165%);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .98),
-        inset 0 -1px 0 rgba(255, 180, 84, .12),
-        0 7px 18px rgba(0, 0, 0, .22);
-    transition: background .28s ease, border-color .25s ease, box-shadow .28s ease, transform .22s ease, color .22s ease !important;
+    color: #1E1E1C !important;
+    border: 1px solid #DDD5C7 !important;
+    background: #FFFFFF !important;
+    box-shadow: 0 1px 4px rgba(30, 30, 28, 0.03);
+    transition: background .2s ease, border-color .2s ease, box-shadow .2s ease, transform .2s ease, color .2s ease !important;
 }
 .pm-exam-choice {
     min-height: 46px;
@@ -107,174 +93,143 @@
 .pm-exam-mode-choice,
 .pm-exam-difficulty-choice {
     min-height: 76px;
-    border-radius: 18px !important;
+    border-radius: 16px !important;
 }
 .pm-exam-choice:hover,
 .pm-exam-mode-choice:hover,
 .pm-exam-difficulty-choice:hover {
-    color: #1a0e00 !important;
-    border-color: rgba(255, 180, 84, .92) !important;
-    background: linear-gradient(135deg, #ffb454 0%, #ffd08a 58%, #ffb454 100%) !important;
-    transform: translateY(-2px);
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .5),
-        0 10px 25px rgba(255, 180, 84, .27),
-        0 8px 20px rgba(0, 0, 0, .24);
+    color: #1E1E1C !important;
+    border-color: #B9AA91 !important;
+    background: #EDE7DC !important;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px rgba(30, 30, 28, 0.06);
 }
 .pm-exam-choice[aria-pressed="true"],
 .pm-exam-mode-choice[aria-pressed="true"],
 .pm-exam-difficulty-choice[aria-pressed="true"] {
-    color: #1a0e00 !important;
-    border-color: rgba(255, 208, 138, .98) !important;
-    background: linear-gradient(135deg, #ffb454 0%, #ffd08a 54%, #ffb454 100%) !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .52),
-        0 9px 24px rgba(255, 180, 84, .32),
-        0 0 0 1px rgba(255, 180, 84, .24);
+    color: #F5F2EB !important;
+    border-color: #1E1E1C !important;
+    background: #1E1E1C !important;
+    box-shadow: 0 4px 14px rgba(30, 30, 28, 0.16);
 }
 .pm-exam-choice[aria-pressed="true"] span,
 .pm-exam-mode-choice[aria-pressed="true"] span,
 .pm-exam-difficulty-choice[aria-pressed="true"] span,
 .pm-exam-mode-choice[aria-pressed="true"] svg,
 .pm-exam-difficulty-choice[aria-pressed="true"] svg {
-    color: #1a0e00 !important;
+    color: #F5F2EB !important;
 }
 .pm-exam-choice:focus-visible,
 .pm-exam-mode-choice:focus-visible,
 .pm-exam-difficulty-choice:focus-visible,
 .pm-exam-start-action:focus-visible,
 .pm-exam-room-action:focus-visible {
-    outline: 2px solid #a78bfa;
+    outline: 2px solid #D8CBB3;
     outline-offset: 3px;
 }
 
-/* Auth-style white primary surface; amber liquid fill rises on hover. */
+/* Primary charcoal start action. */
 .pm-exam-start-action,
 .pm-exam-generate-action {
     position: relative;
     isolation: isolate;
     overflow: hidden;
     min-height: 48px;
-    border: 1px solid rgba(255, 180, 84, .46) !important;
+    border: 1px solid #1E1E1C !important;
     border-radius: 999px !important;
-    background: linear-gradient(135deg, #ffffff, #f1f1f1) !important;
-    color: #0d0b08 !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .98),
-        0 7px 20px rgba(255, 180, 84, .12) !important;
-    transition: color .35s ease, transform .24s ease, border-color .3s ease, box-shadow .35s ease !important;
-}
-.pm-exam-start-action::before,
-.pm-exam-generate-action::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    z-index: -1;
-    border-radius: inherit;
-    background: linear-gradient(135deg, #ffb454 0%, #ffd08a 55%, #ffb454 100%);
-    transform: translateY(102%);
-    transition: transform .45s cubic-bezier(.22, 1, .36, 1);
+    background: #1E1E1C !important;
+    color: #F5F2EB !important;
+    box-shadow: 0 4px 14px rgba(30, 30, 28, 0.12) !important;
+    font-weight: 600;
+    transition: background .2s ease, transform .2s ease, box-shadow .2s ease !important;
 }
 .pm-exam-start-action:hover:not(:disabled),
 .pm-exam-generate-action:hover:not(:disabled) {
-    color: #1a0e00 !important;
+    background: #2D2B28 !important;
     transform: translateY(-2px);
-    border-color: rgba(255, 208, 138, .98) !important;
-    box-shadow:
-        inset 0 1px 0 rgba(255, 255, 255, .48),
-        0 9px 25px rgba(255, 180, 84, .36),
-        0 3px 10px rgba(0, 0, 0, .24) !important;
-}
-.pm-exam-start-action:hover:not(:disabled)::before,
-.pm-exam-generate-action:hover:not(:disabled)::before {
-    transform: translateY(0);
+    box-shadow: 0 8px 22px rgba(30, 30, 28, 0.18) !important;
 }
 .pm-exam-start-action:disabled,
 .pm-exam-generate-action:disabled {
-    background: linear-gradient(135deg, #f4f1eb, #e6e0d7) !important;
-    color: #756858 !important;
-    border-color: rgba(255, 180, 84, .3) !important;
-    box-shadow: inset 0 1px 0 #fff !important;
+    background: #EDE7DC !important;
+    color: #85837D !important;
+    border-color: #DDD5C7 !important;
+    box-shadow: none !important;
     cursor: not-allowed;
 }
-.pm-exam-start-action:disabled::before,
-.pm-exam-generate-action:disabled::before {
-    display: none;
-}
 
-/* Test Room entry is still a selection/setup step: white glass and amber, not blue. */
+/* Test Room entry action: warm paper button. */
 .pm-exam-room-action {
     min-height: 48px;
-    border: 1px solid rgba(255, 180, 84, .48) !important;
+    border: 1px solid #DDD5C7 !important;
     border-radius: 999px !important;
-    background: linear-gradient(145deg, #ffffff, #f1f1f1) !important;
-    color: #211a11 !important;
-    backdrop-filter: blur(22px) saturate(160%);
-    -webkit-backdrop-filter: blur(22px) saturate(160%);
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .98), 0 8px 20px rgba(0, 0, 0, .2);
+    background: #FFFFFF !important;
+    color: #1E1E1C !important;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(30, 30, 28, 0.04);
+    transition: background .2s ease, border-color .2s ease, transform .2s ease !important;
 }
 .pm-exam-room-action:hover {
-    background: linear-gradient(135deg, #ffb454, #ffd08a 55%, #ffb454) !important;
-    border-color: rgba(255, 208, 138, .98) !important;
-    color: #1a0e00 !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .48), 0 9px 24px rgba(255, 180, 84, .3);
+    background: #EDE7DC !important;
+    border-color: #B9AA91 !important;
+    transform: translateY(-1px);
 }
 
-/* Exam preparation and upload surfaces use a subtle amber reflection. */
+/* Exam preparation and upload cards. */
 .pm-exam-intro-card,
 .pm-exam-upload-card {
     position: relative;
     overflow: hidden;
-    background:
-        radial-gradient(115% 85% at 0% 0%, rgba(255, 180, 84, .11), transparent 54%),
-        rgba(15, 17, 21, .97) !important;
-    border-color: rgba(255, 180, 84, .28) !important;
-    border-radius: 26px !important;
+    background: #FFFFFF !important;
+    border: 1px solid #DDD5C7 !important;
+    border-radius: 20px !important;
+    box-shadow: 0 4px 20px rgba(30, 30, 28, 0.04) !important;
 }
 .pm-exam-intro-card h2,
 .pm-exam-upload-card h2 {
-    color: #fffaf1 !important;
+    color: #1E1E1C !important;
+    font-family: var(--font-serif);
 }
 .pm-exam-instructions {
-    background: rgba(255, 255, 255, .96) !important;
-    color: #211a11 !important;
-    border: 1px solid rgba(255, 180, 84, .48);
-    border-radius: 18px !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .98), 0 8px 20px rgba(0, 0, 0, .18);
+    background: #F5F2EB !important;
+    color: #1E1E1C !important;
+    border: 1px solid #DDD5C7;
+    border-left: 3px solid #D8CBB3;
+    border-radius: 16px !important;
+    box-shadow: none;
 }
 .pm-exam-instructions h3,
 .pm-exam-instructions li {
-    color: #211a11 !important;
+    color: #1E1E1C !important;
 }
 .pm-exam-dropzone {
-    background: linear-gradient(145deg, rgba(255, 255, 255, .98), rgba(241, 241, 241, .96));
-    border: 2px dashed rgba(255, 180, 84, .82);
-    border-radius: 20px;
-    color: #211a11;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .98), 0 10px 24px rgba(0, 0, 0, .2);
-    transition: background .28s ease, border-color .22s ease, box-shadow .28s ease;
+    background: #FFFFFF;
+    border: 2px dashed #D8CBB3;
+    border-radius: 18px;
+    color: #1E1E1C;
+    box-shadow: 0 2px 8px rgba(30, 30, 28, 0.03);
+    transition: background .2s ease, border-color .2s ease;
 }
 .pm-exam-dropzone p {
-    color: #393027 !important;
+    color: #85837D !important;
 }
 .pm-exam-dropzone svg {
-    color: #d88d34 !important;
+    color: #1E1E1C !important;
 }
 .pm-exam-dropzone:hover,
 .pm-exam-dropzone:focus-within {
-    background: linear-gradient(135deg, #ffb454, #ffd08a 58%, #ffb454);
-    border-color: #ffe0ad;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .58), 0 0 24px rgba(255, 180, 84, .24);
+    background: #F5F2EB;
+    border-color: #1E1E1C;
 }
 .pm-exam-uploaded-file {
-    background: rgba(255, 255, 255, .97) !important;
-    color: #211a11 !important;
-    border: 1px solid rgba(255, 180, 84, .42) !important;
-    border-radius: 16px !important;
-    box-shadow: inset 0 1px 0 rgba(255, 255, 255, .98), 0 5px 14px rgba(0, 0, 0, .16);
+    background: #FFFFFF !important;
+    color: #1E1E1C !important;
+    border: 1px solid #DDD5C7 !important;
+    border-radius: 14px !important;
+    box-shadow: 0 2px 6px rgba(30, 30, 28, 0.03);
 }
 .pm-exam-uploaded-file span {
-    color: #2c241b !important;
+    color: #1E1E1C !important;
 }
 /* Exam submission is a completion action: use a clear, flat success green. */
 .pm-active-exam .pm-exam-submit {

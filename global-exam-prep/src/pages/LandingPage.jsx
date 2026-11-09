@@ -211,9 +211,9 @@ export default function LandingPage() {
                             Make every study session count.
                         </motion.h1>
                         <motion.p className="pm-home-description" variants={heroReveal}>
-                            Find your academic program, move through your semester and practise with exams shaped around your subject syllabus. Your next focused session starts here.
+                            Find your academic program, move through your semester and practise with syllabus-matched mock examinations shaped around your subject syllabus. Your next focused session starts here.
                         </motion.p>
-                        <motion.div className="pm-home-actions" variants={heroReveal}>
+                        <motion.div className="pm-home-actions hero-actions" variants={heroReveal}>
                             <motion.a
                                 className="pm-home-primary"
                                 href="#programs"

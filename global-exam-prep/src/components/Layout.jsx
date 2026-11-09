@@ -121,12 +121,12 @@ export default function Layout() {
         subscriptions: CreditCard,
     };
     const navIconColor = {
-        home: 'var(--accent-primary)',
-        dashboard: '#ffb454',
-        courses: '#8d7bff',
-        leaderboards: '#f59e0b',
-        feedback: '#a78bfa',
-        subscriptions: '#34d399',
+        home: '#D8CBB3',
+        dashboard: '#D8CBB3',
+        courses: '#D8CBB3',
+        leaderboards: '#D8CBB3',
+        feedback: '#D8CBB3',
+        subscriptions: '#D8CBB3',
     };
 
     const getActiveNavId = () => {
@@ -636,6 +636,42 @@ export default function Layout() {
                     </Suspense>
                 </motion.div>
             </main>
+
+            <footer className="pm-footer">
+                <div className="pm-footer__inner">
+                    <div className="pm-footer__top">
+                        <div className="pm-footer__brand">
+                            <div className="pm-footer__brand-title">
+                                <BookOpen size={20} color="#D8CBB3" />
+                                <span>PrepMaster</span>
+                            </div>
+                            <p className="pm-footer__tagline">
+                                A modern academic study environment shaped around university syllabuses and structured examination practice.
+                            </p>
+                        </div>
+                        <div className="pm-footer__links-group">
+                            <div className="pm-footer__links-col">
+                                <span className="pm-footer__col-title">Navigation</span>
+                                <Link to="/" className="pm-footer__link">Home</Link>
+                                <Link to="/leaderboards" className="pm-footer__link">Leaderboards</Link>
+                                <Link to="/feedback" className="pm-footer__link">Feedback</Link>
+                            </div>
+                            <div className="pm-footer__links-col">
+                                <span className="pm-footer__col-title">Study Resources</span>
+                                <Link to="/guide" className="pm-footer__link">User Guide</Link>
+                                <Link to="/dashboard" className="pm-footer__link">Dashboard</Link>
+                                <Link to="/subscriptions" className="pm-footer__link">Subscriptions</Link>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="pm-footer__bottom">
+                        <span className="pm-footer__stationery-note">
+                            ✏️ Focused digital study desk & examination companion
+                        </span>
+                        <span>© {new Date().getFullYear()} PrepMaster. All rights reserved.</span>
+                    </div>
+                </div>
+            </footer>
 
             <style>{`
                 @media (max-width: 900px) {

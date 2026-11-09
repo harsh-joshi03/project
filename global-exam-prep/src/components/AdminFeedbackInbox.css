@@ -1,6 +1,6 @@
 /* PrepMaster inbox page — traditional structure, restrained violet/gold detail. */
 .admin-feedback-inbox {
-    --gold: #ffb454;
+    --gold: #1E1E1C;
     --muted: var(--text-secondary);
     --text: var(--text-primary);
     --line: var(--glass-border);

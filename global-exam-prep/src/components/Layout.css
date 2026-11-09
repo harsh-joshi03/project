@@ -1,9 +1,11 @@
-/* Shell chrome — PrepMaster product language. Nav labels/paths unchanged. */
+/* Shell chrome — PrepMaster Editorial Academic System. Nav labels/paths unchanged. */
 
 .pm-nav {
     position: sticky;
     top: 0;
     z-index: 50;
+    background: #1E1E1C !important;
+    border-bottom: 1px solid #363632 !important;
 }
 
 .pm-nav__inner {
@@ -11,7 +13,7 @@
     margin: 0 auto;
 }
 
-/* Local active/hover fill: always positioned within its own nav item. */
+/* Local active/hover fill: positioned within its own nav item */
 .nav-desktop-item {
     position: relative;
     isolation: isolate;
@@ -25,14 +27,15 @@
     z-index: 0;
     pointer-events: none;
     border-radius: var(--radius-full);
-    background: linear-gradient(135deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.03));
-    border: 1px solid rgba(255, 255, 255, 0.18);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4), 0 0 18px rgba(255, 180, 84, 0.16);
+    background: #2D2D2A;
+    border: 1px solid #D8CBB3;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.35);
 }
 
 .pm-logo {
     position: relative;
-    transition: transform 0.28s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
+    text-decoration: none;
+    transition: transform 0.25s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1));
 }
 
 .pm-logo:hover {
@@ -40,19 +43,25 @@
 }
 
 .pm-logo__mark {
+    background: #D8CBB3 !important;
+    border-radius: 8px !important;
     transition: transform 0.28s var(--ease-out, cubic-bezier(0.22, 1, 0.36, 1)), box-shadow 0.28s ease;
 }
 
+.pm-logo__mark svg {
+    color: #1E1E1C !important;
+}
+
 .pm-logo:hover .pm-logo__mark {
-    transform: rotate(-6deg) scale(1.04);
-    box-shadow: 0 8px 22px rgba(59, 130, 246, 0.28);
+    transform: rotate(-6deg) scale(1.05);
+    box-shadow: 0 4px 14px rgba(216, 203, 179, 0.45);
 }
 
 .pm-main {
     flex: 1;
     min-width: 0;
     width: 100%;
-    padding: 2rem 0 3rem;
+    padding: 2rem 0 3.5rem;
 }
 
 .pm-main > div {
@@ -60,6 +69,137 @@
     width: 100%;
 }
 
+/* Suggestions Dropdown */
+.pm-nav-suggestions {
+    background: #FFFFFF !important;
+    border: 1px solid #DDD5C7 !important;
+    border-radius: 12px !important;
+    box-shadow: 0 12px 32px rgba(30, 30, 28, 0.12) !important;
+}
+
+.pm-nav-suggestion-item {
+    color: #1E1E1C !important;
+    border-radius: 8px !important;
+    transition: background 0.15s ease !important;
+}
+
+.pm-nav-suggestion-item:hover {
+    background: #F5F2EB !important;
+}
+
+/* Footer — Minimalist Editorial Stationery Aesthetic */
+.pm-footer {
+    background: #1E1E1C;
+    border-top: 1px solid #363632;
+    color: #EDE7DC;
+    padding: 3rem 1.5rem 2.5rem;
+    position: relative;
+    margin-top: auto;
+}
+
+.pm-footer::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #D8CBB3 30%, #D8CBB3 70%, transparent);
+    opacity: 0.7;
+}
+
+.pm-footer__inner {
+    max-width: 1240px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.pm-footer__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 2rem;
+}
+
+.pm-footer__brand {
+    max-width: 380px;
+}
+
+.pm-footer__brand-title {
+    font-family: var(--font-serif);
+    font-size: 1.35rem;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.pm-footer__brand-title span {
+    color: #D8CBB3;
+}
+
+.pm-footer__tagline {
+    font-size: 0.88rem;
+    color: #85837D;
+    line-height: 1.6;
+}
+
+.pm-footer__links-group {
+    display: flex;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.pm-footer__links-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.pm-footer__col-title {
+    font-size: 0.82rem;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    font-weight: 700;
+    color: #D8CBB3;
+}
+
+.pm-footer__link {
+    color: #85837D;
+    font-size: 0.88rem;
+    text-decoration: none;
+    transition: color 0.15s ease;
+}
+
+.pm-footer__link:hover {
+    color: #FFFFFF;
+}
+
+.pm-footer__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid #2D2D2A;
+    font-size: 0.82rem;
+    color: #85837D;
+}
+
+.pm-footer__stationery-note {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    color: #D8CBB3;
+}
+
 @media (max-width: 768px) {
-    .pm-main { padding: 1.15rem 0 2.5rem; }
+    .pm-main { padding: 1.25rem 0 2.5rem; }
+    .pm-footer__top { flex-direction: column; }
+    .pm-footer__links-group { gap: 2rem; }
 }

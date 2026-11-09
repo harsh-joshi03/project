@@ -325,10 +325,14 @@ describe('homepage', () => {
 
     const harsh = cards.find((card) => card.querySelector('h3')?.textContent.trim() === 'Harsh Joshi');
     expect(harsh.querySelector('a[href^="https://www.linkedin.com/in/harsh-joshi-1a5a2837a"]')).toBeTruthy();
-    expect(harsh.querySelector('a[href^="https://mail.google.com/mail/?view=cm&fs=1&to=harshjoshi30112007@gmail.com"]')).toBeTruthy();
+    const harshMail = [...harsh.querySelectorAll('a')].find((a) => a.getAttribute('href')?.includes('harshjoshi30112007@gmail.com'));
+    expect(harshMail).toBeTruthy();
+    expect(harshMail.getAttribute('href')).toMatch(/^https:\/\/mail\.google\.com\/mail\/\?view=cm&fs=1&to=harshjoshi30112007@gmail\.com/);
 
     const kashyap = cards.find((card) => card.querySelector('h3')?.textContent.trim() === 'Kashyap Ladani');
-    expect(kashyap.querySelector('a[href^="https://mail.google.com/mail/?view=cm&fs=1&to=kashyapladani5636@gmail.com"]')).toBeTruthy();
+    const kashyapMail = [...kashyap.querySelectorAll('a')].find((a) => a.getAttribute('href')?.includes('kashyapladani5636@gmail.com'));
+    expect(kashyapMail).toBeTruthy();
+    expect(kashyapMail.getAttribute('href')).toMatch(/^https:\/\/mail\.google\.com\/mail\/\?view=cm&fs=1&to=kashyapladani5636@gmail\.com/);
     expect(kashyap.querySelector('a[href*="github.com"], a[href*="linkedin.com"]')).toBeNull();
   }, 20000);
 

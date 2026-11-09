@@ -1,13 +1,13 @@
-/* Leaderboard hierarchy: calm surfaces, restrained violet, and warm gold accents. */
+/* Leaderboard hierarchy: PrepMaster Editorial Academic System. */
 .lb {
-    --lb-violet: #75649b;
-    --lb-violet-soft: rgba(117, 100, 155, 0.10);
-    --lb-violet-line: rgba(117, 100, 155, 0.34);
-    --lb-gold: #c8a35b;
-    --lb-gold-soft: rgba(200, 163, 91, 0.12);
-    --lb-gold-line: rgba(200, 163, 91, 0.42);
-    --lb-muted: var(--text-tertiary);
-    --lb-line: var(--glass-border);
+    --lb-violet: #1E1E1C;
+    --lb-violet-soft: #EDE7DC;
+    --lb-violet-line: #B9AA91;
+    --lb-gold: #1E1E1C;
+    --lb-gold-soft: #EDE7DC;
+    --lb-gold-line: #D8CBB3;
+    --lb-muted: #85837D;
+    --lb-line: #DDD5C7;
     width: min(1120px, 100%);
     max-width: 100%;
     min-width: 0;
